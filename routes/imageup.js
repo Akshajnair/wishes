@@ -6,8 +6,6 @@ var multerS3 = require('multer-s3')
 const secretAccessKey=process.env.AWSSECRETKEY
 const accessKeyId=process.env.AWSACCESSKEYID
 
-let Token = require('../models/token.model')
-let Account = require('../models/account.model')
 
 aws.config.update({
   secretAccessKey: 'vzVSilAfgmTVSpfS0qFemKX1M0lS/bvl7kshqS5C',

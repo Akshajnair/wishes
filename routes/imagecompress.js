@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const tinify = require('tinify')
-let Token = require('../models/token.model')
 
 const secretAccessKey = process.env.AWSSECRETKEY
 const accessKeyId = process.env.AWSACCESSKEYID
