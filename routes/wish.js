@@ -6,9 +6,14 @@ router.route('/').get((req, res) => {
     .then(users => res.json(users))
     .catch(err => res.status(400).json('Error: ' + err))
 })
+router.route('/:id').get((req, res) => {
+  Wish.findById(req.params.id)
+    .then(users => res.json(users))
+    .catch(err => res.json('Error'))
+})
 router.route('/add').post((req, res) => {
-  const name = req.body.firstname
-  const nickname = req.body.lastname
+  const name = req.body.name
+  const nickname = req.body.nickname
   const slide = []
   const newWish = new Wish({
     name,
@@ -17,7 +22,7 @@ router.route('/add').post((req, res) => {
   })
   newWish
     .save()
-    .then(() => res.json('Wish added!'))
+    .then(() => res.json(newWish._id))
     .catch(err => res.status(400).json('Error1: ' + err))
 })
 router.route('/update/:wishid').post((req, res) => {
@@ -26,9 +31,9 @@ router.route('/update/:wishid').post((req, res) => {
       Wish.name = req.body.name
       Wish.nickname = req.body.nickname
       Wish.slide = req.body.slides
-      Wishs.save()
+      Wish.save()
         .then(() => res.json('updated'))
-        .catch(err => res.json('invalid'))
+        .catch(err => res.json(err))
     })
     .catch(err => res.json('invalid'))
 })
@@ -38,3 +43,4 @@ router.route('/:id').delete((req, res) => {
     .then(() => res.json('Wishs deleted.'))
     .catch(err => res.status(400).json('Error: ' + err))
 })
+module.exports=router

@@ -1,20 +1,80 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import axios from 'axios'
 
 export class dbcon extends Component {
-  imageupload (image, callback) {
-    const fd = new FormData()
-    fd.append('image', image[0])
-    const options = {
-      url: this.state.baseurl + '/images/add',
-      method: 'POST',
-      data: fd,
-      headers: { 'content-type': 'multipart/form-data' }
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      baseurl: 'http://localhost:5000'
+      // baseurl: window.location.origin
     }
-    console.log(image[0])
+  }
+  create (name, nickname, callback) {
+    const options = {
+      url: this.state.baseurl + '/wish/add',
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json;charset=UTF-8'
+      },
+      data: {
+        name: name,
+        nickname: nickname
+      }
+    }
     axios(options)
       .then(res => {
+        callback(res)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+  updateslide (code, name, nickname, slides, callback) {
+    const options = {
+      url: this.state.baseurl + '/wish/update/' + code,
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json;charset=UTF-8'
+      },
+      data: {
+        name: name,
+        nickname: nickname,
+        slides: slides
+      }
+    }
+    axios(options)
+      .then(res => {
+        callback(res)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+  fetchslide (id, callback) {
+    axios
+      .get(this.state.baseurl + '/wish/' + id)
+      .then(response => {
+        callback(response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
+  imageupload (name, image, callback) {
+    const fd = new FormData()
+    fd.append('myImage', image[0])
+    axios({
+      method: 'post',
+      url: this.state.baseurl + '/images/add/' + name,
+      data: fd
+    })
+      .then(res => {
         console.log(res)
+        callback(res)
       })
       .catch(error => {
         console.log(error)
@@ -22,4 +82,5 @@ export class dbcon extends Component {
   }
 }
 
-export default dbcon
+const db = new dbcon()
+export default db

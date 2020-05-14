@@ -1,7 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './components/Home'
+import Prewish from './components/Prewish'
 import Wish from './components/Wish'
+import Loader from './components/Loader'
+import Saved from './components/Saved'
 
 function App () {
   return (
@@ -18,7 +21,28 @@ function App () {
           exact
           path='/wish'
           render={props => {
+            return <Prewish />
+          }}
+        />
+        <Route
+          exact
+          path='/wish/:id'
+          render={props => {
             return <Wish />
+          }}
+        />
+        <Route
+          exact
+          path='/saved/:id'
+          render={props => {
+            return <Saved />
+          }}
+        />
+        <Route
+          exact
+          path='/loader'
+          render={props => {
+            return <Loader />
           }}
         />
       </Router>

@@ -10,7 +10,6 @@ const wishSchema = new Schema(
     },
     nickname: {
       type: String,
-      required: true,
       trim: true
     },
     slide: [

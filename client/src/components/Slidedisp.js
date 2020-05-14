@@ -6,12 +6,25 @@ export class Slidedisp extends Component {
   constructor (props) {
     super(props)
     this.onchange = this.onchange.bind(this)
+    this.onDrop = this.onDrop.bind(this)
+    this.ondel1 = this.ondel1.bind(this)
+    this.ondel2 = this.ondel2.bind(this)
+  }
+  ondel1 () {
+    this.props.imageedit(this.props.slideno, 1, this.props.slide.image2)
+    this.ondel2()
+  }
+  ondel2 () {
+    this.props.imageedit(this.props.slideno, 2, '')
   }
   img1 () {
     if (this.props.slide.image1)
       return (
         <div className='inside-img'>
           <img src={this.props.slide.image1} alt='' />
+          <button onClick={this.ondel1} className='img-delete'>
+            <i className='fa fa-trash'></i>
+          </button>
         </div>
       )
   }
@@ -20,6 +33,9 @@ export class Slidedisp extends Component {
       return (
         <div className='inside-img'>
           <img src={this.props.slide.image2} alt='' />
+          <button onClick={this.ondel2} className='img-delete'>
+            <i className='fa fa-trash'></i>
+          </button>
         </div>
       )
     else
@@ -31,7 +47,6 @@ export class Slidedisp extends Component {
             padding: '0px',
             boxShadow: '0px'
           }}
-          buttonText='Choose images'
           className='pic-add-input'
           withLabel={false}
           onChange={this.onDrop}
@@ -49,25 +64,44 @@ export class Slidedisp extends Component {
     this.props.memoedit(this.props.slideno, e.target.value)
   }
   onDrop (picture) {
-    dbcon.imageupload(picture, function (response) {
-      console.log(response)
+    const this1 = this
+    this.props.loadtoggle()
+    var a = 1
+    if (this.props.slide.image1) {
+      a = 2
+    }
+    const code = window.location.pathname.split('/')[2]
+    dbcon.imageupload(code + this1.props.slideno + '' + a, picture, function (
+      response
+    ) {
+      this1.props.imageedit(this1.props.slideno, a, response.data.imageUrl)
     })
   }
   render () {
-    return (
-      <div className='message'>
-        <div className='son-images'>
-          {this.img1()}
-          {this.addimg()}
+    if (this.props.num === 0)
+      return (
+        <div className='message'>
+          <div className='no-slide-head'>Nothing to display</div>
+          <div className='no-slide-sub-head'>
+            Click on <b>+ Add slide</b> to continue creating the Memories
+          </div>
         </div>
-        <textarea
-          className='message-from'
-          placeholder='Write Your Message Here'
-          onChange={this.onchange}
-          value={this.props.slide.memo}
-        />
-      </div>
-    )
+      )
+    else
+      return (
+        <div className='message'>
+          <div className='son-images'>
+            {this.img1()}
+            {this.addimg()}
+          </div>
+          <textarea
+            className='message-from'
+            placeholder='Write Your Message Here'
+            onChange={this.onchange}
+            value={this.props.slide.memo}
+          />
+        </div>
+      )
   }
 }
 

@@ -23,11 +23,11 @@ connection.once('open', () => {
 })
 
 const wishRouter = require('./routes/wish')
-// const images = require('./routes/imageup')
+const images = require('./routes/imageup')
 // const imagescompress = require('./routes/imagecompress')
 
 app.use('/wish', wishRouter)
-// app.use('/images', images)
+app.use('/images', images)
 // app.use('/imagescompress', imagescompress)
 
 app.use(express.static('public'))
