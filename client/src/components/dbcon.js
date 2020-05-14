@@ -33,7 +33,7 @@ export class dbcon extends Component {
   }
   updateslide (code, name, nickname, slides, callback) {
     const options = {
-      url: this.state.baseurl + '/wish/update/' + code,
+      url: this.state.baseurl + '/memo/update/' + code,
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -55,7 +55,7 @@ export class dbcon extends Component {
   }
   fetchslide (id, callback) {
     axios
-      .get(this.state.baseurl + '/wish/' + id)
+      .get(this.state.baseurl + '/memo/' + id)
       .then(response => {
         callback(response.data)
       })
