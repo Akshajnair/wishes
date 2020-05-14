@@ -12,7 +12,7 @@ export class dbcon extends Component {
   }
   create (name, nickname, callback) {
     const options = {
-      url: this.state.baseurl + '/wish/add',
+      url: this.state.baseurl + '/memo/add',
       method: 'POST',
       headers: {
         Accept: 'application/json',
