@@ -62,7 +62,6 @@ export class Wish extends Component {
     })
   }
   onsave () {
-    const this1 = this
     if (this.state.name.length >= 4) {
       this.setState({ loading: true, nameerr: '' })
       const code = window.location.pathname.split('/')[2]

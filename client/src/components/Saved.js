@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 
 export default class Saved extends Component {
-  constructor (props) {
-    super(props)
-  }
   edit () {
     window.location =
       window.location.origin + '/wish/' + window.location.pathname.split('/')[2]

@@ -783,3 +783,33 @@ body {
 .no-slide-sub-head b {
   color: #303030;
 }
+.fullscreen-card {
+  height: 100vh;
+  width: 100vw;
+  background-color: #2b2c31;
+  display: grid;
+}
+.floating-card {
+  border: solid 0px;
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  padding: 50px;
+  position: absolute;
+  box-shadow: inset 8px 8px 16px 0 rgba(0, 0, 0, 0.2),
+    inset -8px -8px 16px 0 rgba(255, 255, 255, 0.4);
+  background: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-color: black;
+  transition: ease-out;
+  transition-duration: 0.3s;
+  font-size: 30px;
+}
+.floating-card:hover {
+  border: solid 10px;
+  border-color: #f70000;
+  transform: scale(2);
+}
