@@ -830,7 +830,7 @@ body {
   padding-top: 50px;
 }
 .timer-container {
-  margin: 200px auto;
+  margin: 200px auto 10% auto;
   width: 70%;
   transform: translateZ(100px);
   border: solid 8px;
@@ -856,10 +856,14 @@ body {
   height: 100px;
   margin: 0 auto;
   transform: translateZ(50px);
+  transition-duration: .3s;
 }
 .cover-button:hover{
-
+transform: scale(1.25);
 }
+.cover-button:active{
+  transform: scale(1);
+  }
 .wish-redirect {
   font-size: 40px;
   font-weight: 700;
