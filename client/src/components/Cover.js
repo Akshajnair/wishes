@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Tilt from 'react-tilt'
 import Countdown from 'react-countdown-now'
-import Ballon from './Ballon'
 
 export default class Cover extends Component {
   constructor (props) {
