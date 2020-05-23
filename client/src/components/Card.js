@@ -4,7 +4,6 @@ import Loader from './Loader'
 import dbcon from './dbcon'
 import Cover from './Cover'
 
-
 export default class Card extends Component {
   constructor (props) {
     super(props)
@@ -122,7 +121,7 @@ export default class Card extends Component {
         people.slide.map(slides => {
           slides.name = people.name
           slides.nickname = people.nickname
-          slide=slide.concat(slides) 
+          slide = slide.concat(slides)
         })
       })
       this1.setState({ arr: slide })
@@ -165,7 +164,7 @@ export default class Card extends Component {
   }
   render () {
     if (this.state.loading) return <Loader />
-    // else return <div className='fullscreen-card'>{this.elementdisp()}</div>
-    else return <Cover/>
+    else if (Date.now() < new Date('8/1/2020')) return <Cover />
+    else return <div className='fullscreen-card'>{this.elementdisp()}</div>
   }
 }
