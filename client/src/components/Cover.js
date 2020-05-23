@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import Tilt from 'react-tilt'
 import Countdown from 'react-countdown-now'
+import Ballon from './Ballon'
 
 export default class Cover extends Component {
   constructor (props) {
     super(props)
     this.state = {}
   }
-  redirect(){
-      window.location=window.location.origin+'/wish'
+  redirect () {
+    window.location = window.location.origin + '/wish'
   }
   timerdisp ({ days, hours, minutes, seconds, completed }) {
     return (
@@ -26,15 +27,15 @@ export default class Cover extends Component {
     return (
       <Tilt
         className='Tilt'
-        options={{ max: 10, perspective: 600, scale: 0.9 }}
+        options={{ max: 35, perspective: 1000, scale: 0.9 }}
       >
         <div className='cover-head'>This cover will be removed after: </div>
         <Countdown date={new Date('8/1/2020')} renderer={this.timerdisp} />
-          <div className='cover-button'>
-            <button className='wish-redirect' onClick={this.redirect}>
-              Want to Wish?
-            </button>
-          </div>
+        <div className='cover-button'>
+          <button className='wish-redirect' onClick={this.redirect}>
+            Want to Wish?
+          </button>
+        </div>
       </Tilt>
     )
   }

@@ -839,7 +839,7 @@ body {
   background-color: #fff;
   border-color: #fff;
 }
-.timer-lift{
+.timer-lift {
   transform: translateZ(100px);
 }
 .timer {
@@ -849,21 +849,21 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.cover-button{
+.cover-button {
   background-color: #fff;
   border-radius: 10px;
   width: 300px;
   height: 100px;
   margin: 0 auto;
   transform: translateZ(50px);
-  transition-duration: .3s;
+  transition-duration: 0.3s;
 }
-.cover-button:hover{
-transform: scale(1.25);
+.cover-button:hover {
+  transform: translateZ(150px);
 }
-.cover-button:active{
+.cover-button:active {
   transform: scale(1);
-  }
+}
 .wish-redirect {
   font-size: 40px;
   font-weight: 700;
@@ -873,4 +873,76 @@ transform: scale(1.25);
   background: -webkit-linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.ballon {
+  position: absolute;
+  width: 75px;
+  height: 155.5px;
+  bottom: -160px;
+  transform-origin: 37.5px 0px;
+  transform: translateZ(150px);
+}
+
+.yellow {
+  will-change: transform;
+  animation: float 5s 0s linear infinite;
+  left: 10%;
+}
+
+.green {
+  will-change: transform;
+  animation: float 5s 3s linear infinite;
+  left: 50%;
+}
+
+.blue {
+  will-change: transform;
+  animation: float 5s 4s linear infinite;
+  right: 5%;
+}
+
+.wind {
+  will-change: transform;
+  overflow: hidden;
+  margin-top: -100vh;
+  width: 100vw;
+  height: 200vh;
+  transform-style: preserve-3d;
+}
+
+.parentwind {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  animation: wind 20s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(-200vh) rotate(0deg);
+  }
+}
+
+@keyframes wind {
+  0% {
+    transform: translateX(0px);
+  }
+  10% {
+    transform: translateX(10px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  66% {
+    transform: translateX(3px);
+  }
+  86% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
