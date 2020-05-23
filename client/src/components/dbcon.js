@@ -63,6 +63,16 @@ export class dbcon extends Component {
         console.log(error)
       })
   }
+  fetchallslide (callback) {
+    axios
+      .get(this.state.baseurl + '/memo/')
+      .then(response => {
+        callback(response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
 
   imageupload (name, image, callback) {
     const fd = new FormData()

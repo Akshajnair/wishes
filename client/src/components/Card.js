@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Elements from './Elements'
 import Loader from './Loader'
+import dbcon from './dbcon'
+import Cover from './Cover'
+
 
 export default class Card extends Component {
   constructor (props) {
@@ -23,26 +26,81 @@ export default class Card extends Component {
         { no: 14 },
         { no: 15 },
         { no: 16 },
+        { no: 17 },
+        { no: 18 },
+        { no: 19 },
         { no: 20 },
         { no: 21 },
         { no: 22 },
         { no: 23 },
+        { no: 4 },
+        { no: 5 },
+        { no: 6 },
+        { no: 7 },
+        { no: 8 },
+        { no: 9 },
+        { no: 10 },
+        { no: 11 },
+        { no: 12 },
+        { no: 13 },
+        { no: 14 },
+        { no: 15 },
+        { no: 16 },
+        { no: 17 },
+        { no: 18 },
+        { no: 19 },
+        { no: 20 },
+        { no: 21 },
+        { no: 22 },
+        { no: 9 },
+        { no: 10 },
+        { no: 11 },
+        { no: 12 },
+        { no: 13 },
+        { no: 14 },
+        { no: 15 },
+        { no: 16 },
+        { no: 17 },
+        { no: 18 },
+        { no: 19 },
+        { no: 20 },
+        { no: 21 },
+        { no: 22 },
+        { no: 23 },
+        { no: 4 },
+        { no: 5 },
+        { no: 6 },
+        { no: 7 },
+        { no: 8 },
+        { no: 9 },
+        { no: 10 },
+        { no: 11 },
+        { no: 12 },
+        { no: 13 },
+        { no: 14 },
+        { no: 15 },
+        { no: 16 },
+        { no: 17 },
+        { no: 18 },
         { no: 19 },
         { no: 20 },
         { no: 21 },
         { no: 22 },
         { no: 23 }
       ],
-      size: 300,
+      slide: [],
+      shuffle: [],
+      size: 250,
       gap: 20,
       top: 0,
       left: 0,
       loading: true
     }
     this.staticposition = this.staticposition.bind(this)
+    this.arrage = this.arrage.bind(this)
   }
   componentDidMount () {
-    this.makecenter()
+    this.arrage()
   }
   staticposition (index) {
     const dimension = Math.ceil(Math.sqrt(this.state.arr.length))
@@ -56,6 +114,21 @@ export default class Card extends Component {
       this.state.left
     return { top: top, left: left }
   }
+  arrage () {
+    const this1 = this
+    var slide = []
+    dbcon.fetchallslide(function (res) {
+      res.map((people, index) => {
+        people.slide.map(slides => {
+          slides.name = people.name
+          slides.nickname = people.nickname
+          slide=slide.concat(slides) 
+        })
+      })
+      this1.setState({ arr: slide })
+      this1.makecenter()
+    })
+  }
   makecenter () {
     const dimension = Math.ceil(Math.sqrt(this.state.arr.length))
     const middle = Math.ceil(dimension / 2)
@@ -67,7 +140,7 @@ export default class Card extends Component {
       835 -
       (this.state.size + 2 * this.state.gap) *
         Math.ceil((center - 1) % dimension)
-    this.setState({ top: top, left: left ,loading:false})
+    this.setState({ top: top, left: left, loading: false })
   }
   elementdisp () {
     return this.state.arr.map((slide, key) => {
@@ -85,13 +158,14 @@ export default class Card extends Component {
           staticposition={this.staticposition}
           size={this.state.size}
           gap={this.state.gap}
+          arr={this.state.arr}
         />
       )
     })
   }
-
   render () {
-    if (this.state.loading) return <Loader/>
-    else return <div className='fullscreen-card'>{this.elementdisp()}</div>
+    if (this.state.loading) return <Loader />
+    // else return <div className='fullscreen-card'>{this.elementdisp()}</div>
+    else return <Cover/>
   }
 }

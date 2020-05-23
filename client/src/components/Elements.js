@@ -89,7 +89,7 @@ export default class Elements extends Component {
           width: this.state.size
         }}
       >
-        {this.props.key1 + 1} {this.props.length}
+        {this.props.arr[this.props.key1].name}
       </div>
     )
   }
