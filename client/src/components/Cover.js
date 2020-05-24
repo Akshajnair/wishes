@@ -7,6 +7,12 @@ export default class Cover extends Component {
     super(props)
     this.state = {}
   }
+  componentDidMount () {
+    const script = document.createElement('script')
+    script.src = 'script.js'
+    script.async = true
+    document.body.appendChild(script)
+  }
   redirect () {
     window.location = window.location.origin + '/wish'
   }
@@ -21,8 +27,8 @@ export default class Cover extends Component {
       </div>
     )
   }
+
   render () {
-    console.log(Date('8/1/2020'))
     return (
       <Tilt
         className='Tilt'
@@ -35,6 +41,7 @@ export default class Cover extends Component {
             Want to Wish?
           </button>
         </div>
+        <canvas className='ballon' id='c'></canvas>
       </Tilt>
     )
   }
