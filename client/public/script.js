@@ -29,7 +29,7 @@ function Balloon() {
   this.pm = Math.random() < 0.5 ? -1 : 1;
   this.speed = randomIntFromInterval(1.5, 4);
   this.k = this.speed / 5;
-  this.hue = this.pm > 0 ? "210" : "10";
+  this.hue = Math.floor(Math.random() * 360);
 }
 
 function Draw() {
