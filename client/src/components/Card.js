@@ -4,6 +4,17 @@ import Loader from './Loader'
 import dbcon from './dbcon'
 import Cover from './Cover'
 
+function shuffleArray(array) {
+  let i = array.length - 1;
+  for (; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
 export default class Card extends Component {
   constructor (props) {
     super(props)
@@ -124,7 +135,7 @@ export default class Card extends Component {
           slide = slide.concat(slides)
         })
       })
-      this1.setState({ arr: slide })
+      this1.setState({ arr: shuffleArray(slide) })
       this1.makecenter()
     })
   }
@@ -164,7 +175,7 @@ export default class Card extends Component {
   }
   render () {
     if (this.state.loading) return <Loader />
-    else if (Date.now() < new Date('8/1/2020')) return <Cover />
+    // else if (Date.now() < new Date('8/1/2020')) return <Cover />
     else return <div className='fullscreen-card'>{this.elementdisp()}</div>
   }
 }
