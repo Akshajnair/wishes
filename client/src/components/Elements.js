@@ -34,7 +34,7 @@ export default class Elements extends Component {
   }
   colorc=0
   color () {
-    if (this.colorc > 100) {
+    if (this.colorc > 50) {
       this.setState({
         color:
           'rgb(' +

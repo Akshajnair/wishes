@@ -175,7 +175,7 @@ export default class Card extends Component {
   }
   render () {
     if (this.state.loading) return <Loader />
-    // else if (Date.now() < new Date('8/1/2020')) return <Cover />
+    else if (Date.now() < new Date('8/1/2020')) return <Cover />
     else return <div className='fullscreen-card'>{this.elementdisp()}</div>
   }
 }
