@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 var a = ''
-var colorc = 0
 export default class Elements extends Component {
   constructor (props) {
     super(props)
@@ -33,8 +32,9 @@ export default class Elements extends Component {
     this.setState({ top: a.top, left: a.left })
     // this.makecenter()
   }
+  colorc=0
   color () {
-    if (colorc > 100) {
+    if (this.colorc > 100) {
       this.setState({
         color:
           'rgb(' +
@@ -46,9 +46,9 @@ export default class Elements extends Component {
           ',' +
           '.5)'
       })
-      colorc=0
+      this.colorc=0
     }
-    colorc=colorc+1
+    this.colorc=this.colorc+1
   }
   position () {
     if (!this.props.isPositionOutside) {
