@@ -174,6 +174,7 @@ export default class Card extends Component {
       )
     })
   }
+
   render () {
     if (this.state.loading) return <Loader />
     else if (Date.now() < new Date('8/1/2020')) return <Cover />
