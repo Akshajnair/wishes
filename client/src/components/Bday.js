@@ -29,6 +29,10 @@ export default class Bday extends Component {
     window.location =
       'https://drive.google.com/uc?export=view&id=12Z41lF24VY2fv57DaFDUbmUs5-yaTr9J'
   }
+  redirect1 () {
+    window.location =
+      'https://drive.google.com/uc?export=view&id=1LESExefPTSVko6pSf2D2WoAlffIeNIEB'
+  }
   lock () {
     return (
       <div className='container'>
@@ -73,6 +77,9 @@ export default class Bday extends Component {
       <div className='cover-button'>
           <button className='wish-redirect' onClick={this.redirect}>
             Surprise?
+          </button>
+          <button className='wish-redirect' onClick={this.redirect1}>
+            Surprise 2 :P
           </button>
         </div>
       </div>
