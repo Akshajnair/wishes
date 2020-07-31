@@ -914,3 +914,17 @@ body {
   position: relative;
   transform: translateZ(50px);
 }
+.bcover{
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  background-image: linear-gradient(#59baf5,#ffffd9);
+}
+.bcover img{
+  height: 100vh;
+  width: auto;
+}
+.bcontent{
+  margin-top: 100vh;
+  height: 100vh;
+}
