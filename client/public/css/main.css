@@ -925,8 +925,9 @@ body {
   width: auto;
 }
 .bcontent{
+  height: 100%;
   padding: 50px;
-  font-size: 30px;
+  font-size: 5vmin;
   font-weight: 700;
   color: #dd3483;
 }
