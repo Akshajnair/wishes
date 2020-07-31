@@ -20,7 +20,16 @@ export default class Elements extends Component {
       name:
         this.props.arr[this.props.key1].nickname ||
         this.props.arr[this.props.key1].name,
-      color: ''
+      color:
+        'rgb(' +
+        Math.random() * 250 +
+        ',' +
+        Math.random() * 250 +
+        ',' +
+        Math.random() * 250 +
+        ',' +
+        '.5)',
+      display: 'none'
     }
     this.wishdisp = this.wishdisp.bind(this)
     this.myRef = React.createRef()
@@ -32,7 +41,7 @@ export default class Elements extends Component {
     this.setState({ top: a.top, left: a.left })
     // this.makecenter()
   }
-  colorc=0
+  colorc = 0
   color () {
     if (this.colorc > 50) {
       this.setState({
@@ -46,9 +55,9 @@ export default class Elements extends Component {
           ',' +
           '.5)'
       })
-      this.colorc=0
+      this.colorc = 0
     }
-    this.colorc=this.colorc+1
+    this.colorc = this.colorc + 1
   }
   position () {
     if (!this.props.isPositionOutside) {
@@ -81,14 +90,16 @@ export default class Elements extends Component {
         size: '100%',
         top: 0,
         left: 0,
-        radius: 0
+        radius: 0,
+        display: ''
       })
     else {
       this.setState({
         scale: 1,
         place: 1,
         size: this.props.size,
-        radius: '50%'
+        radius: '50%',
+        display: 'none'
       })
       this.componentDidMount()
     }
@@ -145,6 +156,19 @@ export default class Elements extends Component {
           }}
         >
           {this.state.name}
+          <div className='bubble-hide' style={{ display: this.state.display }}>
+            <div className='image-container'>
+              <div className='cover-slide-img'>
+                <img src={this.props.arr[this.props.key1].image1} />
+              </div>
+              <div className='cover-slide-img'>
+                <img src={this.props.arr[this.props.key1].image2} />
+              </div>
+            </div>
+            <div className='cover-slide-text'>
+              {this.props.arr[this.props.key1].memo}
+            </div>
+          </div>
         </div>
       </div>
     )

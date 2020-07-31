@@ -12,6 +12,7 @@
     "react-dom": "^16.13.1",
     "react-image-crop": "^8.6.2",
     "react-images-upload": "^1.2.8",
+    "react-progressive-image": "^0.6.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-tilt": "^0.1.4"
