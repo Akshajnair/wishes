@@ -6,6 +6,7 @@ import Wish from './components/Wish'
 import Loader from './components/Loader'
 import Saved from './components/Saved'
 import Bday from './components/Bday'
+import Cover from './components/Cover'
 
 function App () {
   return (
@@ -51,6 +52,13 @@ function App () {
           path='/birthday'
           render={props => {
             return <Bday />
+          }}
+        />
+        <Route
+          exact
+          path='/cover'
+          render={props => {
+            return <Cover />
           }}
         />
       </Router>
