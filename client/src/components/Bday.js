@@ -5,7 +5,7 @@ export default class Bday extends Component {
     super(props)
     this.state = {
       code: '',
-      pass: 'mhkchutiyaha',
+      pass: '01199908',
       disp: false,
       err: '',
       content: false
