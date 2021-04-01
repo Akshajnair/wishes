@@ -27,11 +27,11 @@ export default class Bday extends Component {
   }
   redirect () {
     window.location =
-      'https://drive.google.com/uc?export=view&id=12Z41lF24VY2fv57DaFDUbmUs5-yaTr9J'
+      ''
   }
   redirect1 () {
     window.location =
-      'https://drive.google.com/uc?export=view&id=1LESExefPTSVko6pSf2D2WoAlffIeNIEB'
+      ''
   }
   lock () {
     return (
@@ -64,15 +64,6 @@ export default class Bday extends Component {
   content () {
     return (<div>
       <div className='bcontent'>
-        Happy birthday deepu ......actuall i was missing u ... vasa fayda ni ha
-        bolne ka bcz u already know but still yrr..... <br/>u been there with me from
-        last 2 years approx and 8 days bad to hamari anniversery bhi ha chalo
-        uska kushi badme abhi to tera bday ha i want to be with u but hu ni so
-        im writing this for u and i know agar tu ye msg padh rhi ha to u have a
-        smile on ur face...... and sun na ....ik bday tera ha but me ek gift
-        mangunga....plz be there with me for ups and down of my life luv u jaan
-        and niche wali link bhi click kariyo<br/>
-        and sry esa gift ke liya.....thoda time kam tha :(
       </div>
       <div className='cover-button'>
           <button className='wish-redirect' onClick={this.redirect}>
@@ -90,7 +81,7 @@ export default class Bday extends Component {
       <div>
         <div className='bcover'>
           <img
-            src='https://drive.google.com/uc?export=view&id=1IUymmpmST9Sdvn6yWvxuFYnn42gJI5fo'
+            src=''
             onClick={this.onclick}
           />
         </div>
