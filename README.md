@@ -1,4 +1,4 @@
-# birthday
+# Wishes
 
 It's a dynamic birthday wishing website.
 
