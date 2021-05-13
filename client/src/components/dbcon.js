@@ -5,8 +5,8 @@ export class dbcon extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      baseurl: 'http://localhost:5000'
-      // baseurl: window.location.origin
+      // baseurl: 'http://localhost:5000'
+      baseurl: window.location.origins
     }
   }
   create (name, nickname, callback) {
