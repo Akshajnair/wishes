@@ -128,6 +128,7 @@ export default class Card extends Component {
     const this1 = this
     var slide = []
     dbcon.fetchallslide(function (res) {
+      console.log(res)
       res.map((people, index) => {
         people.slide.map(slides => {
           slides.name = people.name
