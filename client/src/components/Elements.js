@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-var a = ''
+import React, { Component } from "react";
+var a = "";
 export default class Elements extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       size: this.props.size,
       gap: this.props.gap,
@@ -15,104 +15,104 @@ export default class Elements extends Component {
       place: 1,
       img:
         this.props.arr[this.props.key1].image1 ||
-        window.location.origin + '/bg-default.webp',
-      radius: '50%',
+        window.location.origin + "/bg-default.webp",
+      radius: "50%",
       name:
         this.props.arr[this.props.key1].nickname ||
         this.props.arr[this.props.key1].name,
       color:
-        'rgb(' +
+        "rgb(" +
         Math.random() * 250 +
-        ',' +
+        "," +
         Math.random() * 250 +
-        ',' +
+        "," +
         Math.random() * 250 +
-        ',' +
-        '.5)',
-      display: 'none'
-    }
-    this.wishdisp = this.wishdisp.bind(this)
-    this.myRef = React.createRef()
+        "," +
+        ".5)",
+      display: "none",
+    };
+    this.wishdisp = this.wishdisp.bind(this);
+    this.myRef = React.createRef();
   }
 
-  componentDidMount () {
-    const index = this.props.key1 + 1
-    const a = this.props.staticposition(index)
-    this.setState({ top: a.top, left: a.left })
+  componentDidMount() {
+    const index = this.props.key1 + 1;
+    const a = this.props.staticposition(index);
+    this.setState({ top: a.top, left: a.left });
     // this.makecenter()
   }
-  colorc = 0
-  color () {
+  colorc = 0;
+  color() {
     if (this.colorc > 50) {
       this.setState({
         color:
-          'rgb(' +
+          "rgb(" +
           Math.random() * 250 +
-          ',' +
+          "," +
           Math.random() * 250 +
-          ',' +
+          "," +
           Math.random() * 250 +
-          ',' +
-          '.5)'
-      })
-      this.colorc = 0
+          "," +
+          ".5)",
+      });
+      this.colorc = 0;
     }
-    this.colorc = this.colorc + 1
+    this.colorc = this.colorc + 1;
   }
-  position () {
+  position() {
     if (!this.props.isPositionOutside) {
       if (this.state.scale === 1) {
         a =
           -(this.props.position.x / this.props.elementDimensions.width - 0.5) *
             this.state.move *
             161 +
-          'px,' +
+          "px," +
           -(this.props.position.y / this.props.elementDimensions.height - 0.5) *
             this.state.move *
             320 +
-          'px'
-      } else a = '0px,0px'
-      return a
-    } else return '0px,0px'
+          "px";
+      } else a = "0px,0px";
+      return a;
+    } else return "0px,0px";
   }
-  makecenter () {
-    const dimension = Math.ceil(Math.sqrt(this.props.length))
-    const middle = Math.ceil(dimension / 2)
+  makecenter() {
+    const dimension = Math.ceil(Math.sqrt(this.props.length));
+    const middle = Math.ceil(dimension / 2);
     if (this.props.key1 + 1 === dimension * middle - (middle - 1)) {
-      console.log(this.props.key1 + 1)
+      console.log(this.props.key1 + 1);
     }
   }
-  wishdisp () {
+  wishdisp() {
     if (this.state.scale === 1)
       this.setState({
         scale: 5,
         place: 0,
-        size: '100%',
+        size: "100%",
         top: 0,
         left: 0,
         radius: 0,
-        display: ''
-      })
+        display: "",
+      });
     else {
       this.setState({
         scale: 1,
         place: 1,
         size: this.props.size,
-        radius: '50%',
-        display: 'none'
-      })
-      this.componentDidMount()
+        radius: "50%",
+        display: "none",
+      });
+      this.componentDidMount();
     }
   }
-  ifcenter () {
+  ifcenter() {
     const left =
       this.state.left -
       (this.props.position.x / this.props.elementDimensions.width - 0.5) *
-        this.state.move
+        this.state.move;
     const top =
       this.state.top -
       (this.props.position.y / this.props.elementDimensions.height - 0.5) *
-        this.state.move
+        this.state.move;
     if (
       (this.state.top -
         (this.props.position.y / this.props.elementDimensions.height - 0.5) *
@@ -125,52 +125,52 @@ export default class Elements extends Component {
         483 <=
         1.1
     )
-      return '350px'
-    else return '250px'
+      return "350px";
+    else return "250px";
   }
 
-  render () {
-    this.color()
+  render() {
+    this.color();
     return (
       <div
-        className='floating-card'
+        className="floating-card"
         onClick={this.wishdisp}
         style={{
-          transform: 'translate(' + this.position() + ')',
+          transform: "translate(" + this.position() + ")",
           marginTop: this.state.top,
           marginLeft: this.state.left,
           height: this.state.size,
           width: this.state.size,
           zIndex: this.state.scale,
-          backgroundImage: 'url(' + this.state.img + ')',
-          borderRadius: this.state.radius
+          backgroundImage: "url(" + this.state.img + ")",
+          borderRadius: this.state.radius,
         }}
       >
         <div
-          className='color-overlay'
+          className="color-overlay"
           style={{
-            height: '100%',
-            width: '100%',
+            height: "100%",
+            width: "100%",
             borderRadius: this.state.radius,
-            backgroundColor: this.state.color
+            backgroundColor: this.state.color,
           }}
         >
           {this.state.name}
-          <div className='bubble-hide' style={{ display: this.state.display }}>
-            <div className='image-container'>
-              <div className='cover-slide-img'>
+          <div className="bubble-hide" style={{ display: this.state.display }}>
+            <div className="image-container">
+              <div className="cover-slide-img">
                 <img src={this.props.arr[this.props.key1].image1} />
               </div>
-              <div className='cover-slide-img'>
+              <div className="cover-slide-img">
                 <img src={this.props.arr[this.props.key1].image2} />
               </div>
             </div>
-            <div className='cover-slide-text'>
+            <div className="cover-slide-text">
               {this.props.arr[this.props.key1].memo}
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
