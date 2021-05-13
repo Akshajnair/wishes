@@ -3,7 +3,6 @@ import Elements from './Elements'
 import Loader from './Loader'
 import dbcon from './dbcon'
 import Cover from './Cover'
-import Bday from './Bday'
 
 function shuffleArray(array) {
   let i = array.length - 1;
@@ -178,7 +177,6 @@ export default class Card extends Component {
   render () {
     if (this.state.loading) return <Loader />
     else if (Date.now() < new Date('8/1/2021')) return <Cover />
-    // else return <div className='fullscreen-card'>{this.elementdisp()}</div>
-    else return <Bday/>
+    else return <div className='fullscreen-card'>{this.elementdisp()}</div>
   }
 }

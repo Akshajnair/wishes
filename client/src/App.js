@@ -5,7 +5,6 @@ import Prewish from './components/Prewish'
 import Wish from './components/Wish'
 import Loader from './components/Loader'
 import Saved from './components/Saved'
-import Bday from './components/Bday'
 import Cover from './components/Cover'
 
 function App () {
@@ -45,13 +44,6 @@ function App () {
           path='/loader'
           render={props => {
             return <Loader />
-          }}
-        />
-        <Route
-          exact
-          path='/birthday'
-          render={props => {
-            return <Bday />
           }}
         />
         <Route
