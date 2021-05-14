@@ -10,8 +10,8 @@ On the opening day it compile and show it in the form of dynamic circles
 Live version is available at https://wishes-full-stack.herokuapp.com/ feel free to fill up my database cause till now i havent :p
 
 ## ScreenShots
-![Cover Page](![WishCreate](https://raw.githubusercontent.com/Akshajnair/wishes/master/Screenshots/cover.png))
-![Wish](https://raw.githubusercontent.com/Akshajnair/wishes/master/Screenshots/Wish.png)
+![Cover Page](https://raw.githubusercontent.com/Akshajnair/wishes/master/Screenshots/cover.png)
+![Wish](https://raw.githubusercontent.com/Akshajnair/wishes/master/Screenshots/wish.png)
 ![WishCreate](https://raw.githubusercontent.com/Akshajnair/wishes/master/Screenshots/Wish_create.png)
 ### Installing
 
