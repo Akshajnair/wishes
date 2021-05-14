@@ -6,7 +6,7 @@ export class dbcon extends Component {
     super(props)
     this.state = {
       // baseurl: 'http://localhost:5000'
-      baseurl: window.location.origins
+      baseurl: "https://wishes-full-stack.herokuapp.com"
     }
   }
   create (name, nickname, callback) {
