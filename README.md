@@ -13,10 +13,10 @@ Live version is available at https://wishes-full-stack.herokuapp.com/ feel free 
 ### Cover Page
 ![Cover Page](https://raw.githubusercontent.com/Akshajnair/wishes/master/Screenshots/cover.png)
 
-### Cover Page
+### Wish
 ![Wish](https://raw.githubusercontent.com/Akshajnair/wishes/master/Screenshots/wish.png)
 
-### Cover Page
+### Wish create
 ![WishCreate](https://raw.githubusercontent.com/Akshajnair/wishes/master/Screenshots/Wish_create.png)
 
 ### Installing
