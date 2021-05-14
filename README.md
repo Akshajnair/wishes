@@ -10,9 +10,15 @@ On the opening day it compile and show it in the form of dynamic circles
 Live version is available at https://wishes-full-stack.herokuapp.com/ feel free to fill up my database cause till now i havent :p
 
 ## ScreenShots
+### Cover Page
 ![Cover Page](https://raw.githubusercontent.com/Akshajnair/wishes/master/Screenshots/cover.png)
+
+### Cover Page
 ![Wish](https://raw.githubusercontent.com/Akshajnair/wishes/master/Screenshots/wish.png)
+
+### Cover Page
 ![WishCreate](https://raw.githubusercontent.com/Akshajnair/wishes/master/Screenshots/Wish_create.png)
+
 ### Installing
 
 If you are installing production version on Heroku or any other platform Just add key in settings 
