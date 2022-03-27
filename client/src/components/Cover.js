@@ -35,7 +35,7 @@ export default class Cover extends Component {
         options={{ max: 35, perspective: 1000, scale: 0.9 }}
       >
         <div className='cover-head'>This cover will be removed after: </div>
-        <Countdown date={new Date('8/1/2021')} renderer={this.timerdisp} />
+        <Countdown date={new Date('8/1/2022')} renderer={this.timerdisp} />
         <div className='cover-button'>
           <button className='wish-redirect' onClick={this.redirect}>
             Want to Wish?
